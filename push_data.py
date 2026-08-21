@@ -5,7 +5,7 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 
-MONGODB_URL=os.getenv("MONG_DB_URL")
+MONGODB_URL=os.getenv("MONGODB_URL")
 
 import certifi
 ca = certifi.where()

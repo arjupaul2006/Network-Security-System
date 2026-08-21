@@ -6,6 +6,7 @@ seaborn
 ipynb
 
 pymongo[srv]
+pymongo
 python-dotenv
 certifi
 
