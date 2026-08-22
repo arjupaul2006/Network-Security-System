@@ -17,3 +17,12 @@ FILE_NAME:str = 'phisingData.csv'
 
 TRAIN_FILE_NAME:str = 'train.csv'
 TEST_FILE_NAME:str = 'test.csv'
+SCHEME_FILE_NAME = os.path.join('data_scheme', 'scheme.yaml')
+
+""" Data Validation related Constant """
+
+DATA_VALIDATION_DIR_NAME:str = 'data_validation'
+DATA_VALIDATION_VALID_DIR:str = 'validated'
+DATA_VALIDATION_INVALID_DIR:str = 'invalidated'
+DATA_VALIDATION_DRIFT_REPORT_DIR:str = 'drift_report'
+DATA_VALIDATION_DRIFT_REPORT_FILE_NAME:str = 'report.yaml'
