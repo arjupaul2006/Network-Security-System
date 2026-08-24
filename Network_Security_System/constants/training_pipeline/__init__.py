@@ -1,5 +1,6 @@
 import os
 import sys
+import numpy as np
 
 """ Data Ingestion related Constant """
 
@@ -26,3 +27,17 @@ DATA_VALIDATION_VALID_DIR:str = 'validated'
 DATA_VALIDATION_INVALID_DIR:str = 'invalidated'
 DATA_VALIDATION_DRIFT_REPORT_DIR:str = 'drift_report'
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME:str = 'report.yaml'
+
+""" Data Transformation Related Constant """
+
+DATA_TRANSFORMATION_DIR_NAME:str = 'data_trainsformation'
+DATA_TRANSFORMATION_TRANFORMED_DATA_DIR:str = 'transformed_data'
+DATA_TRANSFORMATION_TRANFORMED_OBJECT_DIR:str = 'trasformed_object'
+DATA_TRANSFORMATION_TRANFORMED_OBJECT_FILE_NAME:str = 'preprocessing.pkl'
+
+# KNN Imputer to replace the nan value
+DATA_TRANSFORMATION_IMPUTER_PARAMS: dict = {
+    'missing_values': np.nan,
+    'n_neighbors': 3,
+    'weights': 'uniform',
+} 

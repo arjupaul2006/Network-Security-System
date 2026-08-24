@@ -28,3 +28,25 @@ def write_yaml_file(file_path:str, content:object, replace:bool = False) -> None
 
     except Exception as e:
         raise CustomeException(e, sys)
+
+
+def save_numpy_array_data(file_path:str, array:np.array):
+    try:
+        dir_name = os.path.dirname(file_path)
+        os.makedirs(dir_name, exist_ok=True)
+        with open(file_path, 'wb') as file_obj:
+            np.save(file_obj, array)
+
+    except Exception as e:
+        raise CustomeException(e, sys)
+
+    
+def save_object(file_path:str, obj:object):
+    try:
+        dir_name = os.path.dirname(file_path)
+        os.makedirs(dir_name, exist_ok=True)
+        with open(file_path, 'wb') as file_obj:
+            pickle.dump(obj, file_obj)
+
+    except Exception as e:
+        raise CustomeException(e, sys)

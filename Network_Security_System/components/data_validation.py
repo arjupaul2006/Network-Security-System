@@ -111,7 +111,7 @@ class DataValidation:
                 error_msg = f'Test data does not contain all columns\n'
 
 
-            # validate the number of columns
+            # validate the number numerical columns
             status = self.validate_numerical_col(df=train_df)
             if not status:
                 error_msg = f'Train data does not contain all numerical columns\n'

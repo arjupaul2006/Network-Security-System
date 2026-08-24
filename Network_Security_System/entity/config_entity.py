@@ -58,3 +58,34 @@ class DataValidationConfig:
             training_pipeline.DATA_VALIDATION_DRIFT_REPORT_DIR,
             training_pipeline.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME
         )
+
+
+class DataTranformationConfig:
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig):
+        # Artifacts/timestamp/data_transformation/
+        self.data_transformation_dir_name = os.path.join(training_pipeline_config.artifacts_dir, training_pipeline.DATA_TRANSFORMATION_DIR_NAME)
+
+        # Artifacts/timestamp/data_transformation/tranformed_data/
+        self.transformed_data_dir = os.path.join(self.data_transformation_dir_name, training_pipeline.DATA_TRANSFORMATION_TRANFORMED_DATA_DIR)
+
+        # Artifacts/timestamp/data_transformation/transformed_object/
+        self.transformed_obj_dir = os.path.join(self.data_transformation_dir_name, training_pipeline.DATA_TRANSFORMATION_TRANFORMED_OBJECT_DIR)
+
+        # Artifacts/timestamp/data_transformation/tranformed_data/train.npy -> transformed train data
+        # Artifacts/timestamp/data_transformation/tranformed_data/test.npy -> transformed test data
+        self.transformed_train_file_path = os.path.join(
+            self.transformed_data_dir, 
+            training_pipeline.TRAIN_FILE_NAME.replace('csv', 'npy')
+        )
+        self.transformed_test_file_path = os.path.join(
+            self.transformed_data_dir, 
+            training_pipeline.TEST_FILE_NAME.replace('csv', 'npy')
+        )
+
+        # Artifacts/timestamp/data_transformation/tranformed_data/preprocessing.pkl
+        self.transformed_obj_file_name = os.path.join(
+            self.transformed_obj_dir, 
+            training_pipeline.DATA_TRANSFORMATION_TRANFORMED_OBJECT_FILE_NAME
+        )
+
+               
