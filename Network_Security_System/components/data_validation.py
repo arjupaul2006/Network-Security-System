@@ -49,7 +49,7 @@ class DataValidation:
     def validate_numerical_col(self, df: pd.DataFrame):
         try:
             number_of_numerical_col = len(self._scheme_config['numerical_columns'])
-            number_of_numerical_col_in_df = len(df.select_dtypes(exclude='str').columns)
+            number_of_numerical_col_in_df = len(df.select_dtypes(include='number').columns)
 
             logging.info(f'Required number of numerical col: {number_of_numerical_col}')
             logging.info(f'Number of numerical col in datafram: {number_of_numerical_col_in_df}')
