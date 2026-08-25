@@ -88,4 +88,18 @@ class DataTranformationConfig:
             training_pipeline.DATA_TRANSFORMATION_TRANFORMED_OBJECT_FILE_NAME
         )
 
-               
+
+class ModelTrainingConfig:
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig):
+        # Artifacts/timestamp/model_trainer
+        self.model_trainer_dir_name = os.path.join(training_pipeline_config.artifacts_dir, training_pipeline.MODEL_TRAINER_DIR_NAME)
+
+        # Artifacts/timestamp/model_trainer/trained_model/model.pkl
+        self.trained_model_file_path = os.path.join(
+            self.model_trainer_dir_name,
+            training_pipeline.MODEL_TRAINER_TRAINED_MODEL_DIR,
+            training_pipeline.MODEL_TRAINER_TRAINED_MODEL_FILE_NAME
+        )
+
+        self.model_expected_accuracy = training_pipeline.MODEL_TRAINER_EXPECTED_SCORE
+        self.overfitting_underfitting_threshold = training_pipeline.MODEL_TRAINER_OVERFITTING_UNDERFITTING_THRESHOLD
