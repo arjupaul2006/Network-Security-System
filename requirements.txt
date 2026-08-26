@@ -12,5 +12,8 @@ certifi
 pyaml
 dill
 mlflow
+dagshub
+
+fastapi
 
 # -e .

@@ -76,6 +76,9 @@ class DataTransformation:
             tranformed_train_df = preprocessor.fit_transform(input_columns_train_df)
             tranformed_test_df = preprocessor.transform(input_columns_test_df)
 
+            # save the preprocessor
+            save_object('final_model/preprocessor.pkl', preprocessor)
+
             train_arr = np.c_[tranformed_train_df, np.array(target_column_train_df)]
             test_arr = np.c_[tranformed_test_df, np.array(target_column_test_df)]
 
