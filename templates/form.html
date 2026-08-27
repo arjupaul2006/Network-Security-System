@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        h2 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        input {
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #fff;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        .submit-btn {
+            margin-top: 25px;
+            text-align: center;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        .note {
+            text-align: center;
+            color: #6b7280;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+        .result {
+            margin-top: 25px;
+            padding: 16px;
+            border-radius: 8px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Phishing URL Prediction Form</h2>
+        <form method="post" action="/form">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="having_IP_Address">having_IP_Address</label>
+                    <input type="number" id="having_IP_Address" name="having_IP_Address" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="URL_Length">URL_Length</label>
+                    <input type="number" id="URL_Length" name="URL_Length" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Shortining_Service">Shortining_Service</label>
+                    <input type="number" id="Shortining_Service" name="Shortining_Service" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="having_At_Symbol">having_At_Symbol</label>
+                    <input type="number" id="having_At_Symbol" name="having_At_Symbol" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="double_slash_redirecting">double_slash_redirecting</label>
+                    <input type="number" id="double_slash_redirecting" name="double_slash_redirecting" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Prefix_Suffix">Prefix_Suffix</label>
+                    <input type="number" id="Prefix_Suffix" name="Prefix_Suffix" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="having_Sub_Domain">having_Sub_Domain</label>
+                    <input type="number" id="having_Sub_Domain" name="having_Sub_Domain" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="SSLfinal_State">SSLfinal_State</label>
+                    <input type="number" id="SSLfinal_State" name="SSLfinal_State" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Domain_registeration_length">Domain_registeration_length</label>
+                    <input type="number" id="Domain_registeration_length" name="Domain_registeration_length" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Favicon">Favicon</label>
+                    <input type="number" id="Favicon" name="Favicon" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="port">port</label>
+                    <input type="number" id="port" name="port" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="HTTPS_token">HTTPS_token</label>
+                    <input type="number" id="HTTPS_token" name="HTTPS_token" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Request_URL">Request_URL</label>
+                    <input type="number" id="Request_URL" name="Request_URL" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="URL_of_Anchor">URL_of_Anchor</label>
+                    <input type="number" id="URL_of_Anchor" name="URL_of_Anchor" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Links_in_tags">Links_in_tags</label>
+                    <input type="number" id="Links_in_tags" name="Links_in_tags" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="SFH">SFH</label>
+                    <input type="number" id="SFH" name="SFH" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Submitting_to_email">Submitting_to_email</label>
+                    <input type="number" id="Submitting_to_email" name="Submitting_to_email" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Abnormal_URL">Abnormal_URL</label>
+                    <input type="number" id="Abnormal_URL" name="Abnormal_URL" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Redirect">Redirect</label>
+                    <input type="number" id="Redirect" name="Redirect" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="on_mouseover">on_mouseover</label>
+                    <input type="number" id="on_mouseover" name="on_mouseover" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="RightClick">RightClick</label>
+                    <input type="number" id="RightClick" name="RightClick" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="popUpWidnow">popUpWidnow</label>
+                    <input type="number" id="popUpWidnow" name="popUpWidnow" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Iframe">Iframe</label>
+                    <input type="number" id="Iframe" name="Iframe" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="age_of_domain">age_of_domain</label>
+                    <input type="number" id="age_of_domain" name="age_of_domain" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="DNSRecord">DNSRecord</label>
+                    <input type="number" id="DNSRecord" name="DNSRecord" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="web_traffic">web_traffic</label>
+                    <input type="number" id="web_traffic" name="web_traffic" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Page_Rank">Page_Rank</label>
+                    <input type="number" id="Page_Rank" name="Page_Rank" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Google_Index">Google_Index</label>
+                    <input type="number" id="Google_Index" name="Google_Index" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Links_pointing_to_page">Links_pointing_to_page</label>
+                    <input type="number" id="Links_pointing_to_page" name="Links_pointing_to_page" min="-1" max="1" step="1" value="0" required>
+                </div>
+                <div class="field">
+                    <label for="Statistical_report">Statistical_report</label>
+                    <input type="number" id="Statistical_report" name="Statistical_report" min="-1" max="1" step="1" value="0" required>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit">Check Prediction</button>
+            </div>
+            <div class="note">Use values from -1, 0, or 1 based on the dataset rules.</div>
+        </form>
+
+        {% if result is defined %}
+        <div class="result">
+            Prediction: {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
